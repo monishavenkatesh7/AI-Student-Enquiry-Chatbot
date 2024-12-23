@@ -58,7 +58,7 @@ The application interprets natural language prompts in English and generates acc
 ## Submission Links
 
 - **GitHub Repository:** [Link to Repository]([#](https://github.com/monishavenkatesh7/AI-Student-Enquiry-Chatbot))
-- **Installation, Demo, and Explanation Video:** [Link to Video](#)
+- **Installation, Demo, and Explanation Video:** [Link to Video]([#](https://youtu.be/5Bel5Aksdi8))
 
 ---
 
