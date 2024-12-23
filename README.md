@@ -57,8 +57,7 @@ The application interprets natural language prompts in English and generates acc
 
 ## Submission Links
 
-- **GitHub Repository:** [Link to Repository]([#](https://github.com/monishavenkatesh7/AI-Student-Enquiry-Chatbot/tree/main))
-- **Google Drive Link:** [Link to Drive](#)
+- **GitHub Repository:** [Link to Repository]([#](https://github.com/monishavenkatesh7/AI-Student-Enquiry-Chatbot))
 - **Installation, Demo, and Explanation Video:** [Link to Video](#)
 
 ---
@@ -67,6 +66,8 @@ The application interprets natural language prompts in English and generates acc
 
 - Ensure you are connected to the internet while running the application.
 - Detailed explanation of the setup process is included in the demo video.
+- The "Data Creation, DB making.ipynb" file can be used for random data generation or you can connect to the existing data itself or you can connect your own data aswell for your purposes
+- The "Operations.ipynb" file is the the same code as app.py just without streamlit which can be used for the uderstanding purposes. 
 
 ---
 
