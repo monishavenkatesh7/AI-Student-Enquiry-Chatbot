@@ -35,15 +35,16 @@ The application interprets natural language prompts in English and generates acc
    git clone <repository_link>
    cd <repository_name>
    ```
-2. Install the required dependencies:
+   Or you can doenload the code into your folder
+3. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Add the API key to `api_key.txt`:
+4. Add the API key to `api_key.txt`:
    - Create a file named `api_key.txt` in the project directory.
    - Paste the API key into the file (ensure it contains only the key, with no additional text).
 
-4. Run the application:
+5. Run the application:
    ```bash
    streamlit run app.py
    ```
@@ -71,7 +72,7 @@ The application interprets natural language prompts in English and generates acc
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under a **Personal License**. Unauthorized distribution, reproduction, or commercial use of this software is prohibited without explicit permission.
 
 ---
 
