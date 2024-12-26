@@ -119,55 +119,13 @@ elif choice == "CRUD Operations":
             else:
                 st.error("No student found with this registration number.")
 
-# # AI Queries
-# elif choice == "AI Queries":
-#     st.header("AI-Powered Queries")
-#     user_message = st.text_area("""
-#         Enter your question based on the database. 
-#         Follow these rules for better results:
-#         1. Use keywords from the columns: {}
-#         2. Avoid punctuation and abbreviations.
-#         3. Be precise and clear.
-#         4. If it shown some error just give the same prompt again with the same rules above it must work fine
-#         Eg Prompts
-#         Show all students admitted in 2024
-#         List students with grades above B in Term 2
-#         Who are the top-performing students from low-income families low income families means those families with less than 200000 income
-#         Which students failed any subject in the last exam
-#     """.format(", ".join(list(df.columns))))
-
-#     if st.button("Submit Query"):
-#         query = f'''
-#         I have a SQL table named JoinedStudents with the following columns: {df.columns}.
-#         Please generate a SQL query to fulfill the following request:
-#         {user_message}.
-#         Provide the SQL code without explanations or extra text.
-#         '''
-#         response = chat.send_message(query)
-#         sql_query = response.text.strip()
-#         print(sql_query)
-
-#         k = sql_query
-#         k1 = k.split('sql\n')[-1]
-#         k2 = k1.split(';')[0]
-
-#         sql_query = k2
-
-#         st.code(sql_query, language="sql")
-
-#         try:
-#             result = pd.read_sql(sql_query, conn)
-#             st.dataframe(result)
-#         except Exception as e:
-#             st.error(f"Error executing query: {e}")
-
-
 # AI Queries
 elif choice == "AI Queries":
     st.header("AI-Powered Queries")
 
     # Prompt the user to input their Gemini API key
-    api_key = st.text_input("Enter your Gemini API Key", type="password")
+    api_key = st.text_input("""Enter your Gemini API Key
+    you can get free gemini API Key from here https://aistudio.google.com/apikey""", type="password")
 
     if api_key:
         # Configure Google Generative AI using the entered API key
