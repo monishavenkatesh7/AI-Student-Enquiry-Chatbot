@@ -3,7 +3,7 @@ import sqlite3
 import pandas as pd
 
 # Connect to the SQLite database
-conn = sqlite3.connect("school.db")
+conn = sqlite3.connect("students.db")
 cursor = conn.cursor()
 
 # Create the tables if they don't exist
