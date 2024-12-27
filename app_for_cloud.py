@@ -196,6 +196,7 @@ elif choice == "Visualizations":
     # SQL Query to fetch performance data
     query = """
     SELECT 
+        StudentsMarksheet.UniqueStudentRegNo AS StudentID,
         StudentsMaster.StudentName,
         StudentsMarksheet.Average,
         CASE 
@@ -218,7 +219,7 @@ elif choice == "Visualizations":
     # Read the SQL query into a DataFrame
     try:
         performance_table = pd.read_sql(query, conn)
-        st.subheader("Student Performance Table")
+        st.subheader("Student Performance Summary")
         st.dataframe(performance_table)
     except Exception as e:
         st.error(f"Error fetching performance data: {e}")
