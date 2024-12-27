@@ -112,9 +112,10 @@ if st.button("Add"):
                 """, (student_id, student_class, section, test_term, tamil, english, maths, science, social_science,
                       total, average, grade))
 
-                conn.commit()
+                conn.commit()  # Commit the changes to the database
                 st.success("Student information added successfully!")
             except Exception as e:
+                conn.rollback()  # Rollback if any error occurs
                 st.error(f"Error adding data: {e}")
 
 # View data from the database
