@@ -181,7 +181,6 @@ elif choice == "AI Queries":
     else:
         st.warning("Please enter your Gemini API key to proceed.")
 
-# Visualizations
 elif choice == "Visualizations":
     st.header("Data Visualizations")
 
@@ -194,13 +193,35 @@ elif choice == "Visualizations":
     else:
         st.error("The 'dateofjoining' column is missing.")
 
-    performance_columns = ["tamil", "english", "maths", "science", "socialscience", "total", "grade"]
-    if all(col in df.columns for col in performance_columns):
+    # SQL Query to fetch performance data
+    query = """
+    SELECT 
+        StudentsMaster.StudentName,
+        StudentsMarksheet.Average,
+        CASE 
+            WHEN (Tamil < 50 OR English < 50 OR Maths < 50 OR Science < 50 OR SocialScience < 50) THEN 'Fail'
+            ELSE CASE 
+                WHEN StudentsMarksheet.Average >= 80 THEN 'A'
+                WHEN StudentsMarksheet.Average >= 60 THEN 'B'
+                WHEN StudentsMarksheet.Average >= 50 THEN 'C'
+                ELSE 'D'
+            END
+        END AS Grade
+    FROM 
+        StudentsMarksheet
+    JOIN 
+        StudentsMaster
+    ON 
+        StudentsMarksheet.UniqueStudentRegNo = StudentsMaster.UniqueStudentRegNo
+    """
+
+    # Read the SQL query into a DataFrame
+    try:
+        performance_table = pd.read_sql(query, conn)
         st.subheader("Student Performance Table")
-        performance_table = df[["uniquestudentregno", "studentname"] + performance_columns]
         st.dataframe(performance_table)
-    else:
-        st.error("Performance-related columns are missing.")
+    except Exception as e:
+        st.error(f"Error fetching performance data: {e}")
 
 # Close the database connection
 conn.close()
