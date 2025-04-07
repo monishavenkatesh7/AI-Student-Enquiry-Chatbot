@@ -1,0 +1,5 @@
+Created a random student data using Faker and uploaded it to sqllite3
+created a streamlit web app which can do the 
+CRUDE operations: Add a new student, View the existing student, Update the existing student details, Delete the existing student details
+AI Queries: If the user can enter the google gemini API one can enter english queries like "what is the count of student who got A grade with a family income less than 3L"
+Other tab contains the visualisation of a student grades table and bar chart of admissions per year
